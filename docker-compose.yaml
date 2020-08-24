@@ -52,7 +52,7 @@ services:
     networks:
       - queue
   worker:
-    image: python:3.6
+    build: worker
     volumes:
       # Worker
       - ./worker:/worker
@@ -61,4 +61,4 @@ services:
     depends_on:
       - queue
     working_dir: /worker
-    command: bash ./app.sh
+    command: worker.py
