@@ -47,6 +47,8 @@ services:
       - queue
     working_dir: /app
     command: bash ./app.sh
+    environment:
+      - DB_NAME=email_sender
   queue:
     image: redis:3.2
     networks:
